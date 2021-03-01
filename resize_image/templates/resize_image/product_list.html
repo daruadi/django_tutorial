@@ -1,0 +1,12 @@
+{% extends 'resize_image/base.html' %}
+{% block 'content' %}
+  {% for object in object_list %}
+    <p>
+      {% if object.image %}
+        <img src="{{object.image.url}}" alt="">
+      {% endif %}
+      {{object.name}}
+    </p>
+  {% endfor %}
+  <a href="{% url 'resize_image:create' %}" class="btn btn-success">Tambah Produk</a>
+{% endblock %}
